@@ -33,8 +33,8 @@ private LOGIN loginView; // Referencia a la ventana de login
         this.loginView = loginView; // Guarda la referencia a la ventana de login
         initComponents();
         
-       txtrol.setText(SesionUsuario.getRoluser());
-       txtnombre.setText(ses.getNombreUsuario());
+//       txtrol.setText(SesionUsuario.getRoluser());
+//       txtnombre.setText(ses.getNombreUsuario());
        Iconbard.setIcon(new FlatSVGIcon(getClass().getResource("/Iconos/Icon.svg")));
          lblLupa.setIcon(new FlatSVGIcon(getClass().getResource("/Iconos/Icon.svg")));
 //       this.getContentPane().setBackground("#00000");
@@ -165,17 +165,11 @@ private static void contraerPanel(JPanel panel) {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         panelPrincipal = new javax.swing.JPanel();
-        panelone = new javax.swing.JPanel();
         flatTabbedPane1 = new com.formdev.flatlaf.extras.components.FlatTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        panelRound2 = new Components.PanelRound();
-        txtrol = new javax.swing.JLabel();
-        txtnombre = new javax.swing.JLabel();
-        rSPanelCircleImage1 = new rojerusan.RSPanelCircleImage();
         rSButtonIconI1 = new rojerusan.RSButtonIconI();
         panellateral = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -191,6 +185,7 @@ private static void contraerPanel(JPanel panel) {
         panelr = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         flatTextField2 = new com.formdev.flatlaf.extras.components.FlatTextField();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         Iconbard = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -204,21 +199,6 @@ private static void contraerPanel(JPanel panel) {
 
         panelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         panelPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        panelone.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout paneloneLayout = new javax.swing.GroupLayout(panelone);
-        panelone.setLayout(paneloneLayout);
-        paneloneLayout.setHorizontalGroup(
-            paneloneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
-        );
-        paneloneLayout.setVerticalGroup(
-            paneloneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 110, Short.MAX_VALUE)
-        );
-
-        panelPrincipal.add(panelone, new org.netbeans.lib.awtextra.AbsoluteConstraints(566, 140, -1, -1));
 
         flatTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
         flatTabbedPane1.setTabType(com.formdev.flatlaf.extras.components.FlatTabbedPane.TabType.underlined);
@@ -260,13 +240,6 @@ private static void contraerPanel(JPanel panel) {
             }
         });
 
-        jButton1.setText("CONTRAER");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -274,66 +247,17 @@ private static void contraerPanel(JPanel panel) {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(88, 88, 88)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(31, 31, 31))
+                .addGap(209, 209, 209))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel1))
-                .addGap(23, 23, 23))
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1)
+                .addGap(27, 27, 27))
         );
 
         panelPrincipal.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(726, 135, -1, -1));
-
-        panelRound2.setBackground(new java.awt.Color(255, 255, 255));
-        panelRound2.setBorderColor(new java.awt.Color(208, 213, 227));
-
-        txtrol.setText("---");
-
-        txtnombre.setText("--");
-
-        javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
-        panelRound2.setLayout(panelRound2Layout);
-        panelRound2Layout.setHorizontalGroup(
-            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound2Layout.createSequentialGroup()
-                .addGap(174, 174, 174)
-                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtrol)
-                    .addComponent(txtnombre))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        panelRound2Layout.setVerticalGroup(
-            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound2Layout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addComponent(txtnombre)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtrol)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        panelPrincipal.add(panelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 140, 80));
-
-        rSPanelCircleImage1.setColorBorde(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout rSPanelCircleImage1Layout = new javax.swing.GroupLayout(rSPanelCircleImage1);
-        rSPanelCircleImage1.setLayout(rSPanelCircleImage1Layout);
-        rSPanelCircleImage1Layout.setHorizontalGroup(
-            rSPanelCircleImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
-        );
-        rSPanelCircleImage1Layout.setVerticalGroup(
-            rSPanelCircleImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
-        );
-
-        panelPrincipal.add(rSPanelCircleImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(649, 210, -1, -1));
 
         rSButtonIconI1.setBackground(new java.awt.Color(255, 255, 255));
         rSButtonIconI1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Abraham\\Documents\\NetBeansProjects\\SISTEMAELECTIVAS\\src\\main\\java\\Iconos\\anime.png")); // NOI18N
@@ -467,6 +391,14 @@ private static void contraerPanel(JPanel panel) {
 
         panelPrincipal.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 46));
 
+        jButton1.setText("CONTRAER");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        panelPrincipal.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 80, -1, -1));
+
         jMenuBar1.setBackground(new java.awt.Color(247, 248, 250));
         jMenuBar1.setPreferredSize(new java.awt.Dimension(118, 40));
         jMenuBar1.add(Iconbard);
@@ -501,7 +433,7 @@ private static void contraerPanel(JPanel panel) {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-     contraerPanel(panelone);
+//     contraerPanel(panelone);
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void rSButtonIconI1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonIconI1ActionPerformed
@@ -576,13 +508,8 @@ try {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel lblLupa;
     private javax.swing.JPanel panelPrincipal;
-    private Components.PanelRound panelRound2;
     private javax.swing.JPanel panellateral;
-    private javax.swing.JPanel panelone;
     private javax.swing.JPanel panelr;
     private rojerusan.RSButtonIconI rSButtonIconI1;
-    private rojerusan.RSPanelCircleImage rSPanelCircleImage1;
-    private javax.swing.JLabel txtnombre;
-    private javax.swing.JLabel txtrol;
     // End of variables declaration//GEN-END:variables
 }
