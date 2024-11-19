@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 import MODELO.Roles.SesionUsuario;
+import com.formdev.flatlaf.FlatClientProperties;
 import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.extras.FlatSVGIcon;
 import com.formdev.flatlaf.extras.components.FlatButton;
@@ -17,6 +18,7 @@ import com.formdev.flatlaf.extras.components.FlatButton.ButtonType;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -34,17 +36,22 @@ private LOGIN loginView; // Referencia a la ventana de login
        txtrol.setText(SesionUsuario.getRoluser());
        txtnombre.setText(ses.getNombreUsuario());
        Iconbard.setIcon(new FlatSVGIcon(getClass().getResource("/Iconos/Icon.svg")));
-       this.getContentPane().setBackground(Color.WHITE);
-       System.setProperty("flatlaf.windowDecorationColor", "#FFFFFF"); // Color blanco para la barra de título
+         lblLupa.setIcon(new FlatSVGIcon(getClass().getResource("/Iconos/Icon.svg")));
+//       this.getContentPane().setBackground("#00000");
+       this.getContentPane().setBackground(new Color(247, 248, 250));
+
+       //System.setProperty("flatlaf.windowDecorationColor", "#FFFFFF"); // Color blanco para la barra de título
        jMenuBar1.setBackground(Color.WHITE);
-  this.getRootPane().putClientProperty("JRootPane.titleBarBackground", Color.WHITE);
+//  this.getRootPane().putClientProperty("JRootPane.titleBarBackground","#00000");
+  this.getRootPane().putClientProperty("JRootPane.titleBarBackground", new Color(247, 248, 250));
+
    this.getRootPane().putClientProperty("JRootPane.frameBorder", null);
    
                 FlatLightLaf.setup();
    // Crear un menú estándar
           // Crear el botón personalizado
         FlatButton usersButton = new FlatButton();
-        usersButton.setIcon(new FlatSVGIcon("Iconos/Icon.svg")); // Ruta al ícono SVG
+        usersButton.setIcon(new FlatSVGIcon("Iconos/iconNotification.svg")); // Ruta al ícono SVG
         usersButton.setButtonType(ButtonType.toolBarButton);
         usersButton.setPreferredSize(new Dimension(40,90));
         usersButton.setFocusable(false);
@@ -53,7 +60,7 @@ usersButton.setMaximumSize(new Dimension(50, Integer.MAX_VALUE)); // Altura para
 
 
         FlatButton usersButton2 = new FlatButton();
-        usersButton2.setIcon(new FlatSVGIcon("Iconos/Icon.svg",14 ,14)); // Ruta al ícono SVG
+        usersButton2.setIcon(new FlatSVGIcon("Iconos/iconMessage.svg",14 ,14)); // Ruta al ícono SVG
         usersButton2.setButtonType(ButtonType.toolBarButton);
 usersButton2.setPreferredSize(new Dimension(50, 30)); // Ancho fijo, altura ajustable más tarde
 usersButton2.setMaximumSize(new Dimension(50, Integer.MAX_VALUE)); // Altura para ocupar todo el espacio disponible
@@ -75,10 +82,13 @@ usersButton2.setMaximumSize(new Dimension(50, Integer.MAX_VALUE)); // Altura par
          jMenuBar1.add(usersButton2);
           jMenuBar1.add(Box.createHorizontalStrut(20));
   
-
+          FlatSVGIcon icon = new FlatSVGIcon("Iconos/arrowprev.svg");
+          btnarrownext.setIcon(new FlatSVGIcon("Iconos/arrownext.svg"));
+btnarrowprev.setIcon(icon);
        
+panelr.putClientProperty(FlatClientProperties.STYLE, "arc:10");
+panellateral.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 1, new Color(208, 213, 227)));
 
-      
     }
 
 //   public static void contraerPanel(JPanel panel) {
@@ -154,17 +164,33 @@ private static void contraerPanel(JPanel panel) {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
-        jPanel1 = new javax.swing.JPanel();
+        panelPrincipal = new javax.swing.JPanel();
         panelone = new javax.swing.JPanel();
+        flatTabbedPane1 = new com.formdev.flatlaf.extras.components.FlatTabbedPane();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        rSButtonIconI1 = new rojerusan.RSButtonIconI();
         panelRound2 = new Components.PanelRound();
-        rSPanelCircleImage1 = new rojerusan.RSPanelCircleImage();
         txtrol = new javax.swing.JLabel();
         txtnombre = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        rSPanelCircleImage1 = new rojerusan.RSPanelCircleImage();
+        rSButtonIconI1 = new rojerusan.RSButtonIconI();
+        panellateral = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        flatButton1 = new com.formdev.flatlaf.extras.components.FlatButton();
+        flatButton2 = new com.formdev.flatlaf.extras.components.FlatButton();
+        flatButton3 = new com.formdev.flatlaf.extras.components.FlatButton();
+        flatButton4 = new com.formdev.flatlaf.extras.components.FlatButton();
+        lblLupa = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        btnarrownext = new com.formdev.flatlaf.extras.components.FlatButton();
+        btnarrowprev = new com.formdev.flatlaf.extras.components.FlatButton();
+        panelr = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        flatTextField2 = new com.formdev.flatlaf.extras.components.FlatTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         Iconbard = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -176,10 +202,54 @@ private static void contraerPanel(JPanel panel) {
         setTitle("Horas No Electivas");
         setBackground(new java.awt.Color(0, 0, 0));
 
-        jPanel1.setBackground(new java.awt.Color(250, 250, 250));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+        panelPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelone.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout paneloneLayout = new javax.swing.GroupLayout(panelone);
+        panelone.setLayout(paneloneLayout);
+        paneloneLayout.setHorizontalGroup(
+            paneloneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
+        );
+        paneloneLayout.setVerticalGroup(
+            paneloneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        panelPrincipal.add(panelone, new org.netbeans.lib.awtextra.AbsoluteConstraints(566, 140, -1, -1));
+
+        flatTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
+        flatTabbedPane1.setTabType(com.formdev.flatlaf.extras.components.FlatTabbedPane.TabType.underlined);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 530, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 255, Short.MAX_VALUE)
+        );
+
+        flatTabbedPane1.addTab("tab2", jPanel3);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 530, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 255, Short.MAX_VALUE)
+        );
+
+        flatTabbedPane1.addTab("tab1", jPanel2);
+
+        panelPrincipal.add(flatTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, -1, -1));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -218,19 +288,37 @@ private static void contraerPanel(JPanel panel) {
                 .addGap(23, 23, 23))
         );
 
-        rSButtonIconI1.setBackground(new java.awt.Color(255, 255, 255));
-        rSButtonIconI1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Abraham\\Documents\\NetBeansProjects\\SISTEMAELECTIVAS\\src\\main\\java\\Iconos\\anime.png")); // NOI18N
-        rSButtonIconI1.setText("Iniciar");
-        rSButtonIconI1.setColorText(new java.awt.Color(153, 153, 153));
-        rSButtonIconI1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        rSButtonIconI1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonIconI1ActionPerformed(evt);
-            }
-        });
+        panelPrincipal.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(726, 135, -1, -1));
 
         panelRound2.setBackground(new java.awt.Color(255, 255, 255));
         panelRound2.setBorderColor(new java.awt.Color(208, 213, 227));
+
+        txtrol.setText("---");
+
+        txtnombre.setText("--");
+
+        javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
+        panelRound2.setLayout(panelRound2Layout);
+        panelRound2Layout.setHorizontalGroup(
+            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound2Layout.createSequentialGroup()
+                .addGap(174, 174, 174)
+                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtrol)
+                    .addComponent(txtnombre))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelRound2Layout.setVerticalGroup(
+            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound2Layout.createSequentialGroup()
+                .addGap(112, 112, 112)
+                .addComponent(txtnombre)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtrol)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        panelPrincipal.add(panelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 140, 80));
 
         rSPanelCircleImage1.setColorBorde(new java.awt.Color(255, 255, 255));
 
@@ -245,76 +333,141 @@ private static void contraerPanel(JPanel panel) {
             .addGap(0, 150, Short.MAX_VALUE)
         );
 
-        txtrol.setText("---");
+        panelPrincipal.add(rSPanelCircleImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(649, 210, -1, -1));
 
-        txtnombre.setText("--");
+        rSButtonIconI1.setBackground(new java.awt.Color(255, 255, 255));
+        rSButtonIconI1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Abraham\\Documents\\NetBeansProjects\\SISTEMAELECTIVAS\\src\\main\\java\\Iconos\\anime.png")); // NOI18N
+        rSButtonIconI1.setText("Iniciar");
+        rSButtonIconI1.setColorText(new java.awt.Color(153, 153, 153));
+        rSButtonIconI1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rSButtonIconI1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonIconI1ActionPerformed(evt);
+            }
+        });
+        panelPrincipal.add(rSButtonIconI1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 710, 257, -1));
 
-        javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
-        panelRound2.setLayout(panelRound2Layout);
-        panelRound2Layout.setHorizontalGroup(
-            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(rSPanelCircleImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtrol)
-                    .addComponent(txtnombre))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        panellateral.setBackground(new java.awt.Color(204, 204, 204));
+        panellateral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel5.setBackground(new java.awt.Color(255, 0, 0));
+
+        flatButton1.setText("Dashboard");
+        flatButton1.setButtonType(com.formdev.flatlaf.extras.components.FlatButton.ButtonType.toolBarButton);
+        flatButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        flatButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+
+        flatButton2.setText("Asignar Actividades");
+        flatButton2.setButtonType(com.formdev.flatlaf.extras.components.FlatButton.ButtonType.toolBarButton);
+
+        flatButton3.setText("Ver Reportes");
+        flatButton3.setButtonType(com.formdev.flatlaf.extras.components.FlatButton.ButtonType.toolBarButton);
+
+        flatButton4.setText("Registrar Actividades");
+        flatButton4.setButtonType(com.formdev.flatlaf.extras.components.FlatButton.ButtonType.toolBarButton);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(flatButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(flatButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(flatButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(flatButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
         );
-        panelRound2Layout.setVerticalGroup(
-            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelRound2Layout.createSequentialGroup()
-                        .addComponent(txtnombre)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtrol))
-                    .addComponent(rSPanelCircleImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(flatButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(flatButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(flatButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(flatButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(528, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout paneloneLayout = new javax.swing.GroupLayout(panelone);
-        panelone.setLayout(paneloneLayout);
-        paneloneLayout.setHorizontalGroup(
-            paneloneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneloneLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(paneloneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(paneloneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(paneloneLayout.createSequentialGroup()
-                        .addComponent(rSButtonIconI1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneloneLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(panelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(83, 83, 83))))
+        panellateral.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 16, -1, -1));
+
+        panelPrincipal.add(panellateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, 710));
+
+        lblLupa.setBackground(new java.awt.Color(255, 204, 0));
+        panelPrincipal.add(lblLupa, new org.netbeans.lib.awtextra.AbsoluteConstraints(514, 117, 58, 35));
+
+        jPanel1.setBackground(new java.awt.Color(247, 248, 250));
+
+        jPanel6.setBackground(new java.awt.Color(255, 51, 51));
+        jPanel6.setLayout(new java.awt.GridLayout(1, 0));
+
+        btnarrownext.setBackground(new java.awt.Color(102, 255, 51));
+        btnarrownext.setBorder(null);
+        btnarrownext.setButtonType(com.formdev.flatlaf.extras.components.FlatButton.ButtonType.toolBarButton);
+        jPanel6.add(btnarrownext);
+
+        btnarrowprev.setBackground(new java.awt.Color(255, 204, 102));
+        btnarrowprev.setBorder(null);
+        btnarrowprev.setButtonType(com.formdev.flatlaf.extras.components.FlatButton.ButtonType.toolBarButton);
+        jPanel6.add(btnarrowprev);
+
+        panelr.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Silabo   /   Desarrollo de Soluciones Informáticas");
+
+        javax.swing.GroupLayout panelrLayout = new javax.swing.GroupLayout(panelr);
+        panelr.setLayout(panelrLayout);
+        panelrLayout.setHorizontalGroup(
+            panelrLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelrLayout.createSequentialGroup()
+                .addGap(158, 158, 158)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                .addGap(159, 159, 159))
         );
-        paneloneLayout.setVerticalGroup(
-            paneloneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(paneloneLayout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(panelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(rSButtonIconI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        panelrLayout.setVerticalGroup(
+            panelrLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelrLayout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel1.add(panelone, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 230, 680));
-
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        flatTextField2.setMargin(new java.awt.Insets(2, 6, 2, 15));
+        flatTextField2.setPadding(new java.awt.Insets(0, 0, 0, 15));
+        flatTextField2.setTrailingComponent(lblLupa);
+        flatTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                flatTextField2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 360, 20, 60));
 
-        jMenuBar1.setOpaque(true);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panelr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(24, 24, 24)
+                .addComponent(flatTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                .addGap(17, 17, 17))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(flatTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(panelr, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(0, 10, Short.MAX_VALUE))
+        );
+
+        panelPrincipal.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 46));
+
+        jMenuBar1.setBackground(new java.awt.Color(247, 248, 250));
         jMenuBar1.setPreferredSize(new java.awt.Dimension(118, 40));
         jMenuBar1.add(Iconbard);
 
@@ -332,12 +485,12 @@ private static void contraerPanel(JPanel panel) {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -351,13 +504,13 @@ private static void contraerPanel(JPanel panel) {
      contraerPanel(panelone);
     }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        contraerPanel(panelone);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void rSButtonIconI1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonIconI1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rSButtonIconI1ActionPerformed
+
+    private void flatTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flatTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_flatTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -400,17 +553,33 @@ try {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Iconbard;
+    private com.formdev.flatlaf.extras.components.FlatButton btnarrownext;
+    private com.formdev.flatlaf.extras.components.FlatButton btnarrowprev;
+    private com.formdev.flatlaf.extras.components.FlatButton flatButton1;
+    private com.formdev.flatlaf.extras.components.FlatButton flatButton2;
+    private com.formdev.flatlaf.extras.components.FlatButton flatButton3;
+    private com.formdev.flatlaf.extras.components.FlatButton flatButton4;
+    private com.formdev.flatlaf.extras.components.FlatTabbedPane flatTabbedPane1;
+    private com.formdev.flatlaf.extras.components.FlatTextField flatTextField2;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JLabel lblLupa;
+    private javax.swing.JPanel panelPrincipal;
     private Components.PanelRound panelRound2;
+    private javax.swing.JPanel panellateral;
     private javax.swing.JPanel panelone;
+    private javax.swing.JPanel panelr;
     private rojerusan.RSButtonIconI rSButtonIconI1;
     private rojerusan.RSPanelCircleImage rSPanelCircleImage1;
     private javax.swing.JLabel txtnombre;
